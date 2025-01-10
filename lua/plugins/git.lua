@@ -6,7 +6,7 @@ return {
             local gitsigns = package.loaded.gitsigns
 
             local function map(mode, l, r, desc)
-                vim.keymap.set(mode, l, r { buffer = bufnr, desc = desc })
+                vim.keymap.set(mode, l, r, { buffer = bufnr, desc = desc })
             end
 
             -- Navigation
@@ -41,7 +41,7 @@ return {
             end, "Diff this ~")
 
             -- Text object
-            map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>", "Gitsigns select hunk")
+            --map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>", "Gitsigns select hunk")
         end
     }
 }
