@@ -1,4 +1,5 @@
 return {
+
     "hrsh7th/nvim-cmp",
     event = "InsertEnter",
     dependencies = {
@@ -10,8 +11,12 @@ return {
         "hrsh7th/vim-vsnip",
     },
 
+
     config = function()
         local cmp = require('cmp')
+
+        vim.opt.completeopt = "menu,menuone,noselect,popup"
+
         cmp.setup({
             snippet = {
                 expand = function(args)
@@ -27,7 +32,7 @@ return {
             mapping = cmp.mapping.preset.insert({
                 ["<C-k>"] = cmp.mapping.select_prev_item(),
                 ["<C-j>"] = cmp.mapping.select_next_item(),
-                ["<C-space"] = cmp.mapping.complete(),
+                ["<C-Space"] = cmp.mapping.complete(),
                 ["<CR>"] = cmp.mapping.confirm({ select = false }),
             })
         })
